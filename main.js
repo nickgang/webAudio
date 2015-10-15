@@ -1,28 +1,36 @@
 window.addEventListener('WebComponentsReady', function () {
 
-  console.log('Hello Sine!');
+  console.log('Hello Saw!');
 
   // Your JavaScript code should be here...
 
-  // Get a handle for the knob.
+  // Get handles for the knobs.
   var kFreq = document.querySelector('#k-freq');
-
+  var kCutoff = document.querySelector('#k-cutoff');
+  var kReso = document.querySelector('#k-reso');
+  var kAmp = document.querySelector('#k-amp');
+    
   // Create web audio stuffs.
   var context = new AudioContext();
   var osc = context.createOscillator();
+  var lpf = context.createBiquadFilter();
   var amp = context.createGain();
+  
+  osc.type = 'sawtooth';
+  amp.gain.value = 0.25;
   
   // Bind the knob to the oscillator frequency.
   kFreq.bind(osc.frequency);
+  kCutoff.bind(lpf.frequency);
+  kReso.bind(lpf.Q);
+  kAmp.bind(amp.gain);
 
   // Make connections.
-  osc.to(amp).to(context.DAC);
+  osc.to(lpf).to(amp).to(context.DAC);
 
-  // Schedule automations ahead.
-  amp.gain.step(0.0, 0.0).line([0.5, 1.0], [0.0, 2.0]);
+  // TODO: Try AudioParam automation.
 
   // Then start audio.
-  osc.start(0.0);
-  osc.stop(2.0);
+  osc.start();
 
 });

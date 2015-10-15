@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Hello Sine | Spiral Boilerplate</title>
+  <title>Hello Saw | Spiral Boilerplate</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
@@ -11,10 +11,13 @@
 </head>
 <body unresolved>
 
-  <h1>Hello Sine!</h1>
+  <h1>Hello Saw!</h1>
 
   <!-- Your HTML should be here... -->
   <spiral-knob id="k-freq" label="Freq" value="440" min-value="60" max-value="1000"></spiral-knob>
+  <spiral-knob id="k-cutoff" label="Cutoff" value="250" min-value="60" max-value="1000"></spiral-knob>
+  <spiral-knob id="k-reso" label="Reso" value="1.0" min-value="0.1" max-value="20"></spiral-knob>
+  <spiral-knob id="k-amp" label="Amp" value="0.25" min-value="0.0" max-value="1.0"></spiral-knob>
 
   <script src="main.js"></script>
 </body>
