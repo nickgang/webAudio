@@ -29,7 +29,7 @@ Spiralized Boilerplate for Chrome Dev Editor.
   - Be ready to type your GitHub credential.
 2. Go and check your GitHub gh-pages branch:
   - URL: `https://[username].github.io/spiral-boilerplate.git`.
-  - It takes few minutes for the updated content to be propagated. Be paitient.
+  - It takes few minutes for the updated content to be propagated. Be patient.
 
 
 ## LICENSE
