@@ -28,7 +28,8 @@ Spiralized Boilerplate for Chrome Dev Editor.
 1. Push commit(s) to GitHub by: __Right Click__ on project root > __Push to Origin...__.
   - Be ready to type your GitHub credential.
 2. Go and check your GitHub gh-pages branch:
-  `https://[username].github.io/spiral-boilerplate.git`.
+  - URL: `https://[username].github.io/spiral-boilerplate.git`.
+  - It takes few minutes for the updated content to be propagated. Be paitient.
 
 
 ## LICENSE
