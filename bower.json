@@ -1,0 +1,28 @@
+{
+  "name": "spiral-boilerplate",
+  "version": "0.0.1",
+  "homepage": "https://github.com/hoch/spiral-boilerplate",
+  "authors": [
+    "Hongchan Choi <hongchan.choi@gmail.com>"
+  ],
+  "description": "Spiralized web music app boilerplate",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "spiral",
+    "audio",
+    "music"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "paper-styles": "PolymerElements/paper-styles#^1.0.0",
+    "polymer": "Polymer/polymer#^1.1.0",
+    "spiral": "hoch/spiral#^0.0.2",
+    "spiral-knob": "hoch/spiral-knob#^0.0.2"
+  }
+}
