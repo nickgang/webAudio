@@ -4,9 +4,16 @@ window.addEventListener('WebComponentsReady', function () {
 
   // Your JavaScript code should be here...
 
+  // Get a handle for the knob.
+  var kFreq = document.querySelector('#k-freq');
+
+  // Create web audio stuffs.
   var context = new AudioContext();
   var osc = context.createOscillator();
   var amp = context.createGain();
+  
+  // Bind the knob to the oscillator frequency.
+  kFreq.bind(osc.frequency);
 
   // Make connections.
   osc.to(amp).to(context.DAC);
