@@ -31,6 +31,6 @@ Spiralized Boilerplate for Chrome Dev Editor.
 
 
 ## LICENSE
-The MIT License (MIT). Copyright (c) 2015 Hongchan Choi.
+The MIT License
 
 For feedback and suggestion, please file issues on [the issue tracker](https://github.com/hoch/spiral-boilerplate/issues).
