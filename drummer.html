@@ -16,17 +16,25 @@
   <spiral-knob id="k-speed" label="Speed" value="1.0" min-value="0.01" max-value="2.0"></spiral-knob>
   
   <script>
+    //WebComponentsReady launches the process when all necessary files are loaded from server
     window.addEventListener('WebComponentsReady', function () {
       
       var kSpeed = document.querySelector('#k-speed');
       var context = new AudioContext();
       var files = [
         { name: 'snare', url: 'sounds/sd-001.mp3' },
-        { name: 'stage', url: 'sounds/960-BriteStage.mp3' }
+        { name: 'stage', url: 'sounds/960-BriteStage.mp3' },
+        { name: 'kick' , url: 'sounds/kd-001.mp3' }
       ];
       
+      
+      //Placeholder that will be used when we are done loading audio files
       var myBuffers;
+      
+      //Convolution reverb
       var reverb = context.createConvolver();
+      
+      //Connect reverb to speakers (master effect)
       reverb.to(context.DAC);
       
       // TODO: Use AudioParam to shape the envelope.
@@ -38,24 +46,40 @@
         reverb.buffer = buffers.get('stage');
       }
       
-      function playSnare() {
+      function play(bufferName) {
+        //sample playback node
         var source = context.createBufferSource();
-        source.buffer = myBuffers.get('snare');
+        //'map' data structure in js
+        source.buffer = myBuffers.get(bufferName);
         source.playbackRate.value = kSpeed.getValue();
         source.to(reverb);
+        //throw out the source when we are done
         source.start();
       }
       
-      function listenKeybaord() {
+      
+      
+      function listenKeyboard() {
         window.addEventListener('keydown', function (event) {
+          console.log(event.keyCode);
+          switch (event.keyCode){
+            case 13:
+            play('snare');
+            break;
+            case 16:
+            play('kick')
+            break;
+          }
           if (event.keyCode === 13)
             playSnare();
         });
       }
       
+      //Audio files are passed to this method
+      //With more audio files, we will want to show loading progress
       context.loadAudioFiles(files, function() {})
         .then(setBuffers, null)
-        .then(listenKeybaord, null);
+        .then(listenKeyboard, null);
     });
   </script>
 </body>
