@@ -17,8 +17,6 @@ Spiralized Boilerplate for Chrome Dev Editor.
 ## Editing
 
 1. Edit some files.
-  - For the look of document, edit `index.html` and `assets/main.css`.
-  - For the web audio code, edit `main.js`.
 2. Commit your work by: __Right Click__ on project root > __Commit Changes...__.
 3. Repeat 1 and 2 until satisfied.
 
