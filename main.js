@@ -1,6 +1,6 @@
 window.addEventListener('WebComponentsReady', function () {
 
-  console.log('Hello Saw!');
+  console.log('This prints to the console');
 
   // Your JavaScript code should be here...
 

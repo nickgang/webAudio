@@ -4,4 +4,6 @@ body {
   margin: 2em;
   padding: 2em;
   -webkit-user-select: none;
+  
+  background-color: white;
 }
