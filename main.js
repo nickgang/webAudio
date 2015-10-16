@@ -17,7 +17,7 @@ window.addEventListener('WebComponentsReady', function () {
   var amp = context.createGain();
   
   osc.type = 'sawtooth';
-  amp.gain.value = 0.25;
+  //amp.gain.value = 0.25;
   
   // Bind the knob to the oscillator frequency.
   kFreq.bind(osc.frequency);
@@ -32,6 +32,12 @@ window.addEventListener('WebComponentsReady', function () {
   
 
   // Then start audio.
-  osc.start();
+  osc.start(0.0);
+  osc.stop(2.0);
+  
+  var now = context.currentTime;
+  osc.frequency.step(440,now);
+  osc.frequency.line(880,now + 1.0);
+  osc.frequency.line(200,now + 2.0);
 
 });
